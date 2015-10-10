@@ -6,6 +6,7 @@
 package josephinegypt;
 
 import byui.cit260.josephInEgypt.model.Game;
+import byui.cit260.josephInEgypt.model.Location;
 
 /**
  *
@@ -26,6 +27,21 @@ public class JosephInEgypt {
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);
         
+        
+        Location locationOne = new Location();
+        
+        
+        locationOne.setCityName("city");
+        locationOne.setVisited("visited");
+        
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
+        
+    }
+
+    @Override
+    public String toString() {
+        return "JosephInEgypt{" + '}';
     }
     
 }
