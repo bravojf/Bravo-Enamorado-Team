@@ -9,6 +9,8 @@ import byui.cit260.josephInEgypt.model.Cattle;
 import byui.cit260.josephInEgypt.model.Game;
 import byui.cit260.josephInEgypt.model.Location;
 import byui.cit260.josephInEgypt.model.Mountain;
+import byui.cit260.josephInEgypt.model.Riverside;
+import byui.cit260.josephInEgypt.model.Village;
 
 /**
  *
@@ -56,6 +58,24 @@ public class JosephInEgypt {
         
         String cattleInfo = cattleOne.toString();
         System.out.println(cattleInfo);
+        
+        
+        Village villageOne = new Village();
+        
+        villageOne.setNumberOfWorkers(450);
+        villageOne.setStatusOfSource("good");
+        
+        String villageInfo = villageOne.toString();
+        System.out.println(villageInfo);
+        
+        
+        Riverside riversideOne = new Riverside();
+        
+        riversideOne.setNumberOfWorkers(400);
+        riversideOne.setStatusOfSource("good");
+        
+        String riversideInfo = riversideOne.toString();
+        System.out.println(riversideInfo);
         
     }
 
