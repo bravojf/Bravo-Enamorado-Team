@@ -6,8 +6,10 @@
 package josephinegypt;
 
 import byui.cit260.josephInEgypt.model.Cattle;
+import byui.cit260.josephInEgypt.model.City;
 import byui.cit260.josephInEgypt.model.Game;
 import byui.cit260.josephInEgypt.model.Location;
+import byui.cit260.josephInEgypt.model.Mineral;
 import byui.cit260.josephInEgypt.model.Mountain;
 import byui.cit260.josephInEgypt.model.Riverside;
 import byui.cit260.josephInEgypt.model.Village;
@@ -76,6 +78,26 @@ public class JosephInEgypt {
         
         String riversideInfo = riversideOne.toString();
         System.out.println(riversideInfo);
+        
+        
+        
+        Mineral mineralOne = new Mineral();
+        
+        mineralOne.setNumberOfWorkers(400);
+        mineralOne.setStatusOfSource("good");
+        
+        String mineralInfo = mineralOne.toString();
+        System.out.println(mineralInfo);
+        
+        
+        
+        City cityOne = new City();
+        
+        cityOne.setNumberOfWorkers(300);
+        cityOne.setStatusOfSource("good");
+        
+        String cityInfo = cityOne.toString();
+        System.out.println(cityInfo);
         
     }
 
