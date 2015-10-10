@@ -5,8 +5,10 @@
  */
 package josephinegypt;
 
+import byui.cit260.josephInEgypt.model.Cattle;
 import byui.cit260.josephInEgypt.model.Game;
 import byui.cit260.josephInEgypt.model.Location;
+import byui.cit260.josephInEgypt.model.Mountain;
 
 /**
  *
@@ -36,6 +38,24 @@ public class JosephInEgypt {
         
         String locationInfo = locationOne.toString();
         System.out.println(locationInfo);
+        
+        
+        Mountain mountainOne = new Mountain();
+        
+        mountainOne.setNumberOfWorkers(350);
+        mountainOne.setStatusOfSource("good");
+        
+        String mountainInfo = mountainOne.toString();
+        System.out.println(mountainInfo);
+        
+        
+        Cattle cattleOne = new Cattle();
+        
+        cattleOne.setNumberOfWorkers(400);
+        cattleOne.setStatusOfSource("good");
+        
+        String cattleInfo = cattleOne.toString();
+        System.out.println(cattleInfo);
         
     }
 
