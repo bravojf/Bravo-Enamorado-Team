@@ -5,14 +5,21 @@
  */
 package josephinegypt;
 
+import byui.cit260.josephInEgypt.model.Actor;
 import byui.cit260.josephInEgypt.model.Cattle;
 import byui.cit260.josephInEgypt.model.City;
+import byui.cit260.josephInEgypt.model.Container;
 import byui.cit260.josephInEgypt.model.Game;
+import byui.cit260.josephInEgypt.model.Inventory;
 import byui.cit260.josephInEgypt.model.Location;
+import byui.cit260.josephInEgypt.model.Map;
 import byui.cit260.josephInEgypt.model.Mineral;
 import byui.cit260.josephInEgypt.model.Mountain;
+import byui.cit260.josephInEgypt.model.Player;
 import byui.cit260.josephInEgypt.model.Riverside;
+import byui.cit260.josephInEgypt.model.Transport;
 import byui.cit260.josephInEgypt.model.Village;
+import byui.cit260.josephInEgypt.model.Warehouse;
 
 /**
  *
@@ -99,6 +106,61 @@ public class JosephInEgypt {
         String cityInfo = cityOne.toString();
         System.out.println(cityInfo);
         
+        Map mainMap = new Map();
+        
+        mainMap.setActualLocation("Mountain");
+        
+        String mapInfo = mainMap.toString();
+        System.out.println(mapInfo);
+        
+        Actor actorOne = new Actor();
+        
+        actorOne.setActorLocation("Warehouse");
+        actorOne.setActorTasks("Count Inventory");
+        actorOne.setTimeSpent(8.00);
+        
+        String actorInfo = actorOne.toString();
+        System.out.println(actorInfo);
+        
+        Player playerOne = new Player();
+        
+        playerOne.setPlayerName("Marvin");
+        
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
+        
+        Inventory mainInventory = new Inventory();
+        
+        mainInventory.setInventoryType("Flour");
+        mainInventory.setQuantityInStock(125);
+        mainInventory.setRequiredAmount(400);
+        
+        String inventoryInfo = mainInventory.toString();
+        System.out.println(inventoryInfo);
+        
+        Warehouse inWarehouse = new Warehouse();
+        
+        inWarehouse.setWarehouseSize(800);
+        inWarehouse.setInventoryDescription("Mineral");
+        
+        String warehouseInfo = inWarehouse.toString();
+        System.out.println(warehouseInfo);
+        
+        Container containerOne = new Container();
+        
+        containerOne.setContainerSize(200);
+        containerOne.setInventoryDescription("Cattle");
+        
+        String containerInfo = containerOne.toString();
+        System.out.println(containerInfo);
+        
+        Transport mainTransport = new Transport();
+        
+        mainTransport.setTimeInTransit(5.00);
+        mainTransport.setInventoryDescription("Fruits");
+        
+        String transportInfo = mainTransport.toString();
+        System.out.println(transportInfo);
     }
 
     @Override
