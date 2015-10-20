@@ -20,7 +20,7 @@ public class InventoryControl {
           return -1;
   }
   if (length<0 || length>5.89) {
-          return -1; 
+          return -1;
   }
   
   double area = length * width;
