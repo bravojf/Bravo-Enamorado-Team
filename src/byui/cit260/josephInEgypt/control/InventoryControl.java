@@ -13,13 +13,13 @@ public class InventoryControl {
  
  public double calcVolumeOfContainer(double height, double width, double length){
   
-  if (height<0 || height>1.83) {
+  if (height < 0 || height > 1.83) {
           return -1;
   }
-  if (width<0 || width>2.35) {
+  if (width < 0 || width > 2.35) {
           return -1;
   }
-  if (length<0 || length>5.89) {
+  if (length < 0 || length > 5.89) {
           return -1;
   }
   
