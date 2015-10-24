@@ -58,8 +58,6 @@ public class InventoryControlTest {
   result = instance.calcVolumeOfContainer(height, width, length);
   assertEquals(expResult, result, 0.0001);
   
-  
-  // TODO review the generated test code and remove the default call to fail.
  }
  
 }
