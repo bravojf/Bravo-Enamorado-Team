@@ -30,4 +30,27 @@ public class InventoryControl {
   
  }
  
+ public double calcMaxWeight ( double volume, double weight){
+     if (volume < 0 || volume > 26){
+         return -1;
+     }
+     if (weight < 0 ||weight > 100 ){
+         return -1;
+     }
+     double maxWeight = volume*weight;
+     
+     return maxWeight;
+ }
+ 
+ public double calcContainersNeeded ( double volume, double resource){
+     if (volume < 0 || volume > 26){
+         return -1;
+     }
+     if (resource <0 || resource > 1000000){
+         return-1;
+    }
+     double containersNeeded = volume * resource;
+     return containersNeeded;
+
+ 
 }
