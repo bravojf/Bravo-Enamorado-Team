@@ -51,6 +51,5 @@ public class InventoryControl {
     }
      double containersNeeded = volume * resource;
      return containersNeeded;
-
- 
+    }
 }

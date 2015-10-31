@@ -20,6 +20,7 @@ import byui.cit260.josephInEgypt.model.Riverside;
 import byui.cit260.josephInEgypt.model.Transport;
 import byui.cit260.josephInEgypt.model.Village;
 import byui.cit260.josephInEgypt.model.Warehouse;
+import byui.cit260.josephInEgypt.view.StartProgramView;
 
 /**
  *
@@ -30,8 +31,16 @@ public class JosephInEgypt {
     /**
      * @param args the command line arguments
      */
+    private static Game currentGame = null;
+    private static Player player = null;
+    
     public static void main(String[] args) {
 
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.startProgram();
+        
+        
+        
         Game gameOne = new Game();
            
         gameOne.setPlayer("Jose");
@@ -166,6 +175,22 @@ public class JosephInEgypt {
     @Override
     public String toString() {
         return "JosephInEgypt{" + '}';
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        JosephInEgypt.currentGame = currentGame;
+    }
+
+    public static void setPlayer(Player player) {
+        JosephInEgypt.player = player;
     }
     
 }
