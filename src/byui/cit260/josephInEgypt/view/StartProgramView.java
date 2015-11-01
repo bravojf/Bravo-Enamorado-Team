@@ -19,13 +19,22 @@ public class StartProgramView {
     }
     public void startProgram(){
     
-    //display the banner screen
-        this.displayBanner();
-        String playersName = this.getPlayersName();
-        Player player = ProgramControl.CreatePlayer(playersName);
-        this.displayWelcomeMessage(player);
-        
-        
+     // display the banner screen
+     this.displayBanner();
+     
+     // prompt the player to enter their name Retrieve the name of the player  
+     String playersName = this.getPlayersName();
+     
+     // create and save the player object
+     Player player = ProgramControl.createPlayer(playersName);
+     
+     // display a personalized welcome message
+     this.displayWelcomeMessage(player);
+     
+     // display the main menu
+     MainMenuView mainMenu = new MainMenuView();
+     mainMenu.displayMenu();
+     
     }
 
     private void displayBanner() {
@@ -49,23 +58,27 @@ public class StartProgramView {
 
     private String getPlayersName() {
         
-        boolean valid = false;
+        boolean valid = false; // indicates if the name has been retrieved
         String playersName = null;
-        Scanner keyboard = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in); // keyboard input stream
         
-        while(!valid){
+        while(!valid){ // while a valid name has not been retrieved
+         
+            // prompt for the player's name
             System.out.println("Enter the player's name below:");
             
+            // get the name from the keyboard and trim off the blanks
             playersName = keyboard.nextLine();
             playersName = playersName.trim();
             
+            // if the name is invalid (less than two characters in length)
             if(playersName.length() < 2 ){
                 System.out.println("Invalid name - the name must not be blank");
-                continue;
+                continue; // and repeat again
             }
-            break;
+            break; // out of the (exit) the repetition
         }
-        return playersName;
+        return playersName; // return the name
     }
 
     private void displayWelcomeMessage(Player player) {

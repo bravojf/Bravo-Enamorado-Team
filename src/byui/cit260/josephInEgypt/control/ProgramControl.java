@@ -14,13 +14,13 @@ import josephinegypt.JosephInEgypt;
  */
 public class ProgramControl {
 
-    public static Player CreatePlayer(String playersName) {
-       if(playersName == null){
+    public static Player createPlayer(String name) {
+       if(name == null){
            return null;
        }
        
        Player player = new Player();
-       player.setName(playersName);
+       player.setName(name);
        
        JosephInEgypt.setPlayer(player);
        return player;

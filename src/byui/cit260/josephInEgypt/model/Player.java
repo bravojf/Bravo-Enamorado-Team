@@ -57,16 +57,15 @@ public class Player implements Serializable{
    return false;
   }
   return true;
+ } 
+
+ public String getName() {
+  System.out.println("\n*** getName function called ***");
+  return null;
  }
 
-    public String getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setName(String playersName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
- 
- 
+ public void setName(String name) {
+  System.out.println("\n*** setName function called ***");
+ }
  
 }
