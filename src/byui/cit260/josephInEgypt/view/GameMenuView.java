@@ -118,7 +118,9 @@ public class GameMenuView {
  }
 
  private void exploreLocation() {
-  System.out.println("*** exploreLocation function is called ***");
+  LocationMenuView locationMenu = new LocationMenuView();
+  locationMenu.displayLocationMenu();
+  
  }
 
  private void calculateHarvest() {
