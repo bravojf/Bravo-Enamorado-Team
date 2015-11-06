@@ -11,33 +11,34 @@ import josephinegypt.JosephInEgypt;
 
 /**
  *
- * @author Marvin
+ * @author Marvin y Amada
  */
-public class MainMenuView {
+public class HelpMenuView {
  
- private final String MENU = "\n"
+ private final String HELP_MENU = "\n"
          + "\n-------------------------------------------------------"
-         + "\n|  Main Menu                                          |"
+         + "\n|  Help Menu                                          |"
          + "\n-------------------------------------------------------"
-         + "\nG - Start game"
-         + "\nH - Get help on how to play the game"
-         + "\nS - Save game"
-         + "\nE - Exit"
+         + "\nG - Game Objectives?"
+         + "\nM - How to move"
+         + "\nE - Estimating the amount of resources"
+         + "\nH - Harvesting resources"
+         + "\nD - Delivering resources"
+         + "\nQ - Quit"
          + "\n-------------------------------------------------------";
 
- void displayMenu() {
-  
+ void displayHelpMenu() {
   char selection = ' ';
   do {
    
-   System.out.println(MENU); // display the main menu
+   System.out.println(HELP_MENU); // display the main menu
    
    String input = this.getInput(); // get the user's selection
    selection = input.charAt(0); // get first character of string
    
    this.doAction(selection); // do action based on selection
    
-  } while (selection != 'E'); // an selection is not "Exit"
+  } while (selection != 'Q'); // an selection is not "Quit"
  }
 
  private String getInput() {
@@ -67,16 +68,22 @@ public class MainMenuView {
  private void doAction(char choice) {
   
   switch (choice) {
-   case 'N': // create and start new game
-    this.startNewGame();
+   case 'G': // Display the game objectives
+    this.gameObjectives();
     break;
-   case 'G': // get and start an existing game
-    this.startExistingGame();
+   case 'M': // Display how to move
+    this.howToMove();
     break;
-   case 'H': // display the help menu
-    this.displayHelpMenu();
+   case 'E': // display the estimate resources needed
+    this.estimateResources();
     break;
-   case 'E': // exit the program
+   case 'H': // Display the harvesting resources help
+    this.harvestingResources();
+    break;
+   case 'D': // Display the delivering resources help
+    this.deliveringResources();
+    break;
+   case 'Q': // Quit the help menu
     return;
    default:
     System.out.println("\n*** Invalid selection *** Try again");
@@ -85,20 +92,24 @@ public class MainMenuView {
   
  }
 
- private void startNewGame() {
-  GameControl.createNewGame(JosephInEgypt.getPlayer());
-  
-  GameMenuView gameMenu = new GameMenuView();
-  gameMenu.displayMenu();
+ private void gameObjectives() {
+  System.out.println("*** gameObjectives function called ***");
  }
 
- private void startExistingGame() {
-  System.out.println("*** startExistingGame function called ***");
+ private void howToMove() {
+  System.out.println("*** howToMove function called ***");
  }
 
- private void displayHelpMenu() {
-  HelpMenuView helpMenu = new HelpMenuView();
-  helpMenu.displayHelpMenu();
+ private void estimateResources() {
+  System.out.println("*** estimateResources function called ***");
  }
- 
+
+ private void harvestingResources() {
+  System.out.println("*** harvestingResources function called ***");
+ }
+
+ private void deliveringResources() {
+  System.out.println("*** deliveringResources function called ***");
+ }
 }
+ 
