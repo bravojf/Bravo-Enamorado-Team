@@ -14,8 +14,10 @@ import byui.cit260.josephInEgypt.model.Game;
 public class TransportControl {
 
  public static void transportNewGoods(Game currentGame) {
-  
+
  }
+ 
+ 
  
  /**
   *

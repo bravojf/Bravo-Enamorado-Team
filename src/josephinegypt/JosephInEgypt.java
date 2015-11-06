@@ -2,6 +2,7 @@ package josephinegypt;
 
 import byui.cit260.josephInEgypt.model.Game;
 import byui.cit260.josephInEgypt.model.Player;
+import byui.cit260.josephInEgypt.model.Transport;
 import byui.cit260.josephInEgypt.view.StartProgramView;
 
 /**
@@ -15,6 +16,7 @@ public class JosephInEgypt {
      */
     private static Game currentGame = null;
     private static Player player = null;
+    private static Transport transport = null;
     
     public static void main(String[] args) {
 
@@ -39,5 +41,12 @@ public class JosephInEgypt {
   JosephInEgypt.currentGame = currentGame;
  }
 
+ public static Transport getTransport() {
+  return transport;
+ }
+
+ public static void setTransport(Transport transport) {
+  JosephInEgypt.transport = transport;
+ }
  
 }
