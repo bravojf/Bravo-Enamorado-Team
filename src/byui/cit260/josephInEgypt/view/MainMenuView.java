@@ -19,7 +19,8 @@ public class MainMenuView {
          + "\n-------------------------------------------------------"
          + "\n|  Main Menu                                          |"
          + "\n-------------------------------------------------------"
-         + "\nG - Start game"
+         + "\nN - Start new game"
+         + "\nG - Continue saved game"
          + "\nH - Get help on how to play the game"
          + "\nS - Save game"
          + "\nE - Exit"
@@ -76,6 +77,9 @@ public class MainMenuView {
    case 'H': // display the help menu
     this.displayHelpMenu();
     break;
+   case 'S': // save game
+    this.saveGame();
+    break;
    case 'E': // exit the program
     return;
    default:
@@ -99,6 +103,10 @@ public class MainMenuView {
  private void displayHelpMenu() {
   HelpMenuView helpMenu = new HelpMenuView();
   helpMenu.displayHelpMenu();
+ }
+
+ private void saveGame() {
+  System.out.println("*** saveGame function called ***");
  }
  
 }

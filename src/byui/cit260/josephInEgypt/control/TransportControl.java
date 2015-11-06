@@ -5,11 +5,17 @@
  */
 package byui.cit260.josephInEgypt.control;
 
+import byui.cit260.josephInEgypt.model.Game;
+
 /**
  *
  * @author Marvin
  */
 public class TransportControl {
+
+ public static void transportNewGoods(Game currentGame) {
+  
+ }
  
  /**
   *
