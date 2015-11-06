@@ -11,7 +11,7 @@ import josephinegypt.JosephInEgypt;
 
 /**
  *
- * @author Marvin y Amada
+ * @author Marvin
  */
 public class HelpMenuView {
  
