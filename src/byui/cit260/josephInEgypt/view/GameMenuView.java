@@ -14,9 +14,10 @@ import josephinegypt.JosephInEgypt;
  *
  * @author Marvin y Amada
  */
-public class GameMenuView {
+public class GameMenuView extends View {
  
- private final String GAME_MENU = "\n"
+ public GameMenuView () {
+         super( "\n"
          + "\n-------------------------------------------------------"
          + "\n|  Game Menu                                          |"
          + "\n-------------------------------------------------------"
@@ -31,46 +32,15 @@ public class GameMenuView {
          + "\nM - View game map"
          + "\nI - Show current inventory"
          + "\nQ - Quit"
-         + "\n-------------------------------------------------------";
-
- void displayMenu() {
-  char selection = ' ';
-  do{
-   
-   System.out.println(GAME_MENU);
-   
-   String input = this.getInput();
-   selection = input.charAt(0);
-   this.doAction(selection);
-   
-  } while (selection != 'Q'); 
+         + "\n-------------------------------------------------------");
  }
  
- private String getInput() {
-  boolean valid = false; // indicates if the option has been retrieved
-   String input = null;
-   Scanner keyboard = new Scanner(System.in); // keyboard input stream
-        
-   while(!valid){ // while a valid name has not been retrieved
-         
-    // prompt for the player's name
-    System.out.println("Enter the option below:");
-            
-    // get the name from the keyboard and trim off the blanks
-    input = keyboard.nextLine();
-    input = input.trim();
-            
-    // if the name is invalid (less than two characters in length)
-    if(input.length() < 1 ){
-     System.out.println("Invalid name - the name must not be blank");
-     continue; // and repeat again
-    }
-    break; // out of the (exit) the repetition
-   }
-   return input; // return option
- }
-
- private void doAction(char choice) {
+@Override
+ public boolean doAction(Object obj) {
+  
+  String value = (String) obj;
+  value = value.toUpperCase();
+  char choice = value.charAt(0);
   
   switch (choice) {
    case 'N': // Display the move to a new location
@@ -104,13 +74,13 @@ public class GameMenuView {
     this.showCurrentInventory();
     break;
    case 'Q': // Quit the game menu
-    return;
+    return true;
    default:
     System.out.println("\n*** Invalid selection *** Try again");
     break;
   
  }
- 
+ return false;
 }
 
  private void moveToNewLocation() {
@@ -119,7 +89,7 @@ public class GameMenuView {
 
  private void exploreLocation() {
   LocationMenuView locationMenu = new LocationMenuView();
-  locationMenu.displayLocationMenu();
+  locationMenu.display();
   
  }
 
