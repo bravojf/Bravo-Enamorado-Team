@@ -9,12 +9,66 @@ package byui.cit260.josephInEgypt.view;
  *
  * @author Marvin y Amada
  */
-class TransportGoodsView {
+public class TransportGoodsView extends View{
  
  
 
- void displayTransport() {
-  System.out.println("*** Time in transit calculation will display ***");
+ public TransportGoodsView() {
+  
+  super( "\n"
+         + "\n-------------------------------------------------------"
+         + "\n|  Choose The Location                                |"
+         + "\n-------------------------------------------------------"
+         + "\nW - Warehouse"
+         + "\nR - Riverside"
+         + "\nC - Cattle"
+         + "\nV - Village"
+         + "\nT - City"
+         + "\nM - Mountain"
+         + "\nL - Mineral"
+         + "\nQ - Quit"
+         + "\n-------------------------------------------------------");
+ }
+
+ @Override
+ public boolean doAction(Object obj) {
+  String value = (String) obj;
+  value = value.toUpperCase();
+  char choice = value.charAt(0);
+     
+  switch (choice) {
+  case 'W': // Display the move to a new location
+   this.calcInTransit();
+   break;
+  case 'R': // Explore a location
+   this.calcInTransit();
+   break;
+  case 'C': // Calculate harvest
+   this.calcInTransit();
+   break;
+  case 'V': // Build the warehouse
+   this.calcInTransit();
+   break;
+  case 'T': // Build tools
+   this.calcInTransit();
+   break;
+  case 'M': // Build containers
+   this.calcInTransit();
+   break;
+  case 'L': // Transport goods
+   this.calcInTransit();
+   break;
+  case 'Q': // Quit the game menu
+  return true;
+  default:
+  System.out.println("\n*** Invalid selection *** Try again");
+  break;
+  }
+  return false;
+ }
+
+ private void calcInTransit() {
+  
  }
  
 }

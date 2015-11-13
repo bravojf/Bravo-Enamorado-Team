@@ -12,7 +12,7 @@ import josephinegypt.JosephInEgypt;
 
 /**
  *
- * @author Marvin y Amada
+ * @author Marvin - Jocsan
  */
 public class GameMenuView extends View {
  
@@ -113,7 +113,7 @@ public class GameMenuView extends View {
   TransportControl.transportNewGoods(JosephInEgypt.getCurrentGame());
   
   TransportGoodsView transportTime = new TransportGoodsView();
-  transportTime.displayTransport();
+  transportTime.display();
  }
 
  private void deliverGoods() {
