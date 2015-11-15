@@ -73,8 +73,8 @@ public class StartProgramView {
             
             // if the name is invalid (less than two characters in length)
             if(playersName.length() < 2 ){
-                System.out.println("Invalid name - the name must not be blank");
-                continue; // and repeat again
+              System.out.println("Invalid name - the name must not be blank");
+              continue; // and repeat again
             }
             break; // out of the (exit) the repetition
         }
@@ -87,6 +87,4 @@ public class StartProgramView {
        System.out.println("\tWe hope you have a lot of fun!");
        System.out.println("=====================================================");
     }
-            
-    
 }
