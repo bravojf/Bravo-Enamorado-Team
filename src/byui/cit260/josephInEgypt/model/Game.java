@@ -5,6 +5,7 @@
  */
 package byui.cit260.josephInEgypt.model;
 
+import byui.cit260.josephInEgypt.control.InventoryItem;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -15,10 +16,54 @@ import java.util.Objects;
 public class  Game implements Serializable {
     
     private double timeStatus;
-    private String player;
+    private Player player;
+    private InventoryControl[] inventory;
+    private String[] actor;
+    private Transport transport;
+    private Map map;
 
     public Game() {
     }
+
+ public Player getPlayer() {
+  return player;
+ }
+
+ public InventoryControl[] getInventory() {
+  return inventory;
+ }
+
+ public String[] getActor() {
+  return actor;
+ }
+
+ public Transport getContainer() {
+  return container;
+ }
+
+ public Map getMap() {
+  return map;
+ }
+
+ public void setPlayer(Player player) {
+  this.player = player;
+ }
+
+ public void setInventory(InventoryControl[] inventory) {
+  this.inventory = inventory;
+ }
+
+ public void setActor(String[] actor) {
+  this.actor = actor;
+ }
+
+ public void setContainer(Transport container) {
+  this.container = container;
+ }
+
+ public void setMap(Map map) {
+  this.map = map;
+ }
     
     
 
@@ -28,14 +73,6 @@ public class  Game implements Serializable {
 
     public void setTimeStatus(double timeStatus) {
         this.timeStatus = timeStatus;
-    }
-
-    public String getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(String player) {
-        this.player = player;
     }
 
     @Override
@@ -70,6 +107,14 @@ public class  Game implements Serializable {
         }
         return true;
     }    
+
+ public void setTransport(Transport transport) {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ }
+
+ public void setInventory(InventoryItem[] inventoryList) {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ }
     
     
 }

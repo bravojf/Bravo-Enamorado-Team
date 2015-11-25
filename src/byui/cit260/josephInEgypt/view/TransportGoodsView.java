@@ -11,7 +11,6 @@ package byui.cit260.josephInEgypt.view;
  */
 public class TransportGoodsView extends View{
  
- 
 
  public TransportGoodsView() {
   

@@ -12,83 +12,31 @@ import java.util.Objects;
  *
  * @author Marvin
  */
-public class Actor implements Serializable{
+public enum Actor implements Serializable{
+ 
+ Joseph("He is the Prophet and second in charge after Pharao"),
+ Chief Officer("They coordinate the work done in each territory"),
+ Worker("They work under the supervision of the chief officers"),
+ Blacksmith("They are in charge of building the necessary tools for the workers");
  
  //class instance variables
- private String actorLocation;
- private String actorTasks;
- private double timeSpent;
+ private final String description;
+ private final Point coordinates;
 
  public Actor() {
  }
  
- 
+ Actor(String description) {
+ this.description = description;
+ coordinates = new Point(1,1);
+}
 
- public String getActorLocation() {
-  return actorLocation;
- }
+ public String getDescription(){
+ return description;
+}
 
- public void setActorLocation(String actorLocation) {
-  this.actorLocation = actorLocation;
- }
+ public Point getCoordinates(){
+ return coordinates;
+}
 
- public String getActorTasks() {
-  return actorTasks;
- }
-
- public void setActorTasks(String actorTasks) {
-  this.actorTasks = actorTasks;
- }
-
- public double getTimeSpent() {
-  return timeSpent;
- }
-
- public void setTimeSpent(double timeSpent) {
-  this.timeSpent = timeSpent;
- }
-
- @Override
- public int hashCode() {
-  int hash = 7;
-  hash = 53 * hash + Objects.hashCode(this.actorLocation);
-  hash = 53 * hash + Objects.hashCode(this.actorTasks);
-  hash = 53 * hash + (int) (Double.doubleToLongBits(this.timeSpent) ^ (Double.doubleToLongBits(this.timeSpent) >>> 32));
-  return hash;
- }
-
- @Override
- public String toString() {
-  return "Actor{" + "actorLocation=" + actorLocation + ", actorTasks=" + actorTasks + ", timeSpent=" + timeSpent + '}';
- }
- 
- 
-
- @Override
- public boolean equals(Object obj) {
-  if (obj == null) {
-   return false;
-  }
-  if (getClass() != obj.getClass()) {
-   return false;
-  }
-  final Actor other = (Actor) obj;
-  if (!Objects.equals(this.actorLocation, other.actorLocation)) {
-   return false;
-  }
-  if (!Objects.equals(this.actorTasks, other.actorTasks)) {
-   return false;
-  }
-  if (Double.doubleToLongBits(this.timeSpent) != Double.doubleToLongBits(other.timeSpent)) {
-   return false;
-  }
-  return true;
- }
-
- public void setActorTask(String count_Inventory) {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
- }
- 
- 
- 
 }
