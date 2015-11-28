@@ -6,12 +6,21 @@
 package byui.cit260.josephInEgypt.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
+import javafx.scene.Scene;
 /**
  *
  * @author jocsan
  */
 public class Location implements Serializable{
+    
+    private int row;
+    private int column;
+    private boolean visited;
+    private Scene scene;
+    private ArrayList<Actor> actors;
+    
     
     private String visited;
     private String cityName;
