@@ -17,8 +17,23 @@ public class Transport implements Serializable{
  // class instance variables
  private double timeInTransit;
  private String inventoryDescription;
+ 
+ private String description;
+ private double width;
+ private double length;
+ private double height;
+ private double sqFt0Sale;
+ private double maxWeighCapacity;
+ 
 
  public Transport() {
+     this.description = "\nThis is the this of Joseph In Egypt. If you"
+             +"\nhave faith, you shall prospere on the land";
+     this.width = 0;
+     this.length = 0;
+     this.height = 0;
+     this.maxWeighCapacity = 0;
+     this.sqFt0Sale = 0;
  }
  
 
