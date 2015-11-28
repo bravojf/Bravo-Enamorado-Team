@@ -20,7 +20,12 @@ class InventoryItem {
         water,
         oil,
         honey,
-        salt;
+        salt,
+        hammer,   
+        chisel,  
+        saw, 
+        carts, 
+        barrels;
     }
 
     public static InventoryItem[] createInventoryList(){
@@ -86,6 +91,37 @@ class InventoryItem {
         salt.setQuantityInStock(0);
         salt.setRequiredAmount(0);
         inventory[Item.salt.ordinal()] = salt;
+        
+        InventoryItem hammer = new InventoryItem();
+        hammer.setDescription("Hammer");
+        hammer.setQuantityInStock(0);
+        hammer.setRequiredAmount(0);
+        inventory[Item.hammer.ordinal()] = hammer;
+        
+        InventoryItem chisel = new InventoryItem();
+        chisel.setDescription("Chisel");
+        chisel.setQuantityInStock(0);
+        chisel.setRequiredAmount(0);
+        inventory[Item.chisel.ordinal()] = chisel;
+        
+        InventoryItem saw = new InventoryItem();
+        saw.setDescription("Saw");
+        saw.setQuantityInStock(0);
+        saw.setRequiredAmount(0);
+        inventory[Item.saw.ordinal()] = saw;
+        
+        InventoryItem carts = new InventoryItem();
+        carts.setDescription("Carts");
+        carts.setQuantityInStock(0);
+        carts.setRequiredAmount(0);
+        inventory[Item.carts.ordinal()] = carts;
+        
+        InventoryItem barrels= new InventoryItem();
+        barrels.setDescription("Barrels");
+        barrels.setQuantityInStock(0);
+        barrels.setRequiredAmount(0);
+        inventory[Item.barrels.ordinal()] = barrels;
+        
 
     return inventory;
 }
