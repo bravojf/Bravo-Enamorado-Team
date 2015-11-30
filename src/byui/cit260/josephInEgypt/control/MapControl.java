@@ -5,8 +5,11 @@
  */
 package byui.cit260.josephInEgypt.control;
 
+import MapControlException.MapControlException;
+import byui.cit260.josephInEgypt.model.Actor;
 import byui.cit260.josephInEgypt.model.Game;
 import byui.cit260.josephInEgypt.model.Map;
+import java.awt.Point;
 import josephinegypt.JosephInEgypt;
 
 /**
@@ -29,8 +32,15 @@ public class MapControl {
   return map;
  }
 
- static void moveActorsToStartingLocation(Map map) {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ public static int moveActorsToStartingLocation(Map map)throws MapControlException {
+               
+  Actor[] actors = Actor.values();
+  
+  for (Actor actor : actors) {
+   Point coordinates = actor.getCoordinates();
+   int returnValue = MapControl.moveActorToLocation(actor, coordinates);
+  }
+  return 0;
  }
 
  private static Scene[] crateScenes() {
@@ -91,6 +101,10 @@ public class MapControl {
  }
 
  private static void assignScenesToLocations(Map map, Scene[] scenes) {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ }
+
+ private static int moveActorToLocation(Actor actor, Point coordinates) {
   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
  }
  
