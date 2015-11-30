@@ -15,60 +15,14 @@ import java.util.Objects;
 public class Container implements Serializable{
  
  // class instance variables
- private double containerSize;
- private String inventoryDescription;
-
+ private long numberBarrelsLoaded;
+ private double maxWeight;
+ private double loadedWeight;
+ 
  public Container() {
+  this.numberBarrelsLoaded = 0;
+  this.maxWeight = 1000;
+  this.loadedWeight = 0;
  }
-
- public double getContainerSize() {
-  return containerSize;
- }
-
- public void setContainerSize(double containerSize) {
-  this.containerSize = containerSize;
- }
-
- public String getInventoryDescription() {
-  return inventoryDescription;
- }
-
- public void setInventoryDescription(String inventoryDescription) {
-  this.inventoryDescription = inventoryDescription;
- }
-
- @Override
- public int hashCode() {
-  int hash = 7;
-  hash = 23 * hash + (int) (Double.doubleToLongBits(this.containerSize) ^ (Double.doubleToLongBits(this.containerSize) >>> 32));
-  hash = 23 * hash + Objects.hashCode(this.inventoryDescription);
-  return hash;
- }
-
- @Override
- public String toString() {
-  return "Container{" + "containerSize=" + containerSize + ", inventoryDescription=" + inventoryDescription + '}';
- }
-
- @Override
- public boolean equals(Object obj) {
-  if (obj == null) {
-   return false;
-  }
-  if (getClass() != obj.getClass()) {
-   return false;
-  }
-  final Container other = (Container) obj;
-  if (Double.doubleToLongBits(this.containerSize) != Double.doubleToLongBits(other.containerSize)) {
-   return false;
-  }
-  if (!Objects.equals(this.inventoryDescription, other.inventoryDescription)) {
-   return false;
-  }
-  return true;
- }
- 
- 
- 
  
 }

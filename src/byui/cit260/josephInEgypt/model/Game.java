@@ -5,7 +5,7 @@
  */
 package byui.cit260.josephInEgypt.model;
 
-import byui.cit260.josephInEgypt.control.InventoryItem;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -17,19 +17,21 @@ public class  Game implements Serializable {
     
     private double timeStatus;
     private Player player;
-    private InventoryControl[] inventory;
+    private InventoryItem[] inventory;
     private String[] actor;
-    private Transport transport;
+    private Warehouse warehouse;
+    private Container container;
     private Map map;
 
-    public Game() {
-    }
+ public double getTimeStatus() {
+  return timeStatus;
+ }
 
  public Player getPlayer() {
   return player;
  }
 
- public InventoryControl[] getInventory() {
+ public InventoryItem[] getInventory() {
   return inventory;
  }
 
@@ -37,7 +39,11 @@ public class  Game implements Serializable {
   return actor;
  }
 
- public Transport getContainer() {
+ public Warehouse getWarehouse() {
+  return warehouse;
+ }
+
+ public Container getContainer() {
   return container;
  }
 
@@ -45,11 +51,15 @@ public class  Game implements Serializable {
   return map;
  }
 
+ public void setTimeStatus(double timeStatus) {
+  this.timeStatus = timeStatus;
+ }
+
  public void setPlayer(Player player) {
   this.player = player;
  }
 
- public void setInventory(InventoryControl[] inventory) {
+ public void setInventory(InventoryItem[] inventory) {
   this.inventory = inventory;
  }
 
@@ -57,64 +67,20 @@ public class  Game implements Serializable {
   this.actor = actor;
  }
 
- public void setContainer(Transport container) {
+ public void setWarehouse(Warehouse warehouse) {
+  this.warehouse = warehouse;
+ }
+
+ public void setContainer(Container container) {
   this.container = container;
  }
 
  public void setMap(Map map) {
   this.map = map;
- }
-    
-    
+ }    
 
-    public double getTimeStatus() {
-        return timeStatus;
-    }
-
-    public void setTimeStatus(double timeStatus) {
-        this.timeStatus = timeStatus;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 11 * hash + (int) (Double.doubleToLongBits(this.timeStatus) ^ (Double.doubleToLongBits(this.timeStatus) >>> 32));
-        hash = 11 * hash + Objects.hashCode(this.player);
-        return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "Game{" + "timeStatus=" + timeStatus + ", player=" + player + '}';
-    }
-    
-    
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.timeStatus) != Double.doubleToLongBits(other.timeStatus)) {
-            return false;
-        }
-        if (!Objects.equals(this.player, other.player)) {
-            return false;
-        }
-        return true;
-    }    
-
- public void setTransport(Transport transport) {
+ public void setInventory(byui.cit260.josephInEgypt.control.InventoryItem[] inventoryList) {
   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
  }
 
- public void setInventory(InventoryItem[] inventoryList) {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
- }
-    
-    
 }

@@ -15,61 +15,21 @@ import java.util.Objects;
 public class Warehouse implements Serializable{
  
  // class instance variables
- private double warehouseSize;
- private String inventoryDescription;
+ private String description;
+ private double width;
+ private double length;
+ private double height;
+ private double volume;
 
  public Warehouse() {
- }
  
-
- public double getWarehouseSize() {
-  return warehouseSize;
+  this.description = "\nThis is the Warehouse of Joseph in Egypt. If you"
+                    + "\nhave faith and work had, it will feed all the people";
+  this.width = 0;
+  this.length = 0;
+  this.height = 0;
+  this.volume = 0;
+  
  }
 
- public void setWarehouseSize(double warehouseSize) {
-  this.warehouseSize = warehouseSize;
- }
-
- public String getInventoryDescription() {
-  return inventoryDescription;
- }
-
- public void setInventoryDescription(String inventoryDescription) {
-  this.inventoryDescription = inventoryDescription;
- }
-
- @Override
- public int hashCode() {
-  int hash = 3;
-  hash = 89 * hash + (int) (Double.doubleToLongBits(this.warehouseSize) ^ (Double.doubleToLongBits(this.warehouseSize) >>> 32));
-  hash = 89 * hash + Objects.hashCode(this.inventoryDescription);
-  return hash;
- }
-
- @Override
- public String toString() {
-  return "Warehouse{" + "warehouseSize=" + warehouseSize + ", inventoryDescription=" + inventoryDescription + '}';
- }
-
-
- @Override
- public boolean equals(Object obj) {
-  if (obj == null) {
-   return false;
-  }
-  if (getClass() != obj.getClass()) {
-   return false;
-  }
-  final Warehouse other = (Warehouse) obj;
-  if (Double.doubleToLongBits(this.warehouseSize) != Double.doubleToLongBits(other.warehouseSize)) {
-   return false;
-  }
-  if (!Objects.equals(this.inventoryDescription, other.inventoryDescription)) {
-   return false;
-  }
-  return true;
- }
- 
- 
- 
 }

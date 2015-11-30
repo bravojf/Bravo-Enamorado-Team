@@ -21,7 +21,7 @@ public class Map implements Serializable{
 
  private int noOfRows;
  private int noOfColumns;  
-private Location[][] locations;
+ private Location[][] locations;
 
  public Map() {
  }
@@ -45,49 +45,19 @@ private Location[][] locations;
             location.setVisited(false);
             
             locations[row][column] = location;
-            
-            
+                 
         }
     }
-    }
- 
- public String getActualLocation() {
-  return actualLocation;
+}
+
+ public Location[][] getLocations() {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
  }
 
- public void setActualLocation(String actualLocation) {
-  this.actualLocation = actualLocation;
- }
+ private static class location extends Location {
 
- @Override
- public int hashCode() {
-  int hash = 3;
-  hash = 41 * hash + Objects.hashCode(this.actualLocation);
-  return hash;
- }
-
- @Override
- public String toString() {
-  return "Map{" + "actualLocation=" + actualLocation + '}';
- }
- 
- 
-
- @Override
- public boolean equals(Object obj) {
-  if (obj == null) {
-   return false;
+  public location() {
   }
-  if (getClass() != obj.getClass()) {
-   return false;
-  }
-  final Map other = (Map) obj;
-  if (!Objects.equals(this.actualLocation, other.actualLocation)) {
-   return false;
-  }
-  return true;
  }
- 
- 
- 
+
 }

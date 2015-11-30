@@ -5,6 +5,7 @@
  */
 package byui.cit260.josephInEgypt.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -15,16 +16,13 @@ import java.util.Objects;
 public enum Actor implements Serializable{
  
  Joseph("He is the Prophet and second in charge after Pharao"),
- Chief Officer("They coordinate the work done in each territory"),
+ ChiefOfficer("They coordinate the work done in each territory"),
  Worker("They work under the supervision of the chief officers"),
  Blacksmith("They are in charge of building the necessary tools for the workers");
  
  //class instance variables
  private final String description;
  private final Point coordinates;
-
- public Actor() {
- }
  
  Actor(String description) {
  this.description = description;
