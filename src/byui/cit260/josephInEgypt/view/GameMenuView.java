@@ -30,7 +30,7 @@ public class GameMenuView extends View {
          + "\nG - Transport goods"
          + "\nD - Deliver goods"
          + "\nM - View game map"
-         + "\nI - Show current inventory"
+         + "\nI - View inventory"
          + "\nQ - Quit"
          + "\n-------------------------------------------------------");
  }
@@ -71,7 +71,7 @@ public class GameMenuView extends View {
     this.viewGameMap();
     break;
    case 'I': // Show currect inventory
-    this.showCurrentInventory();
+    this.viewInventory();
     break;
    case 'Q': // Quit the game menu
     return true;
@@ -121,11 +121,43 @@ public class GameMenuView extends View {
  }
 
  private void viewGameMap() {
-  System.out.println("*** viewGameMap function is called ***");
+  
+  GameMap[] map = GameControl.getSortedGameMap();
+  
+  System.out.println("\nList of Locations in the Map");
+  System.out.println("Description" + "\t" +
+                     "Locations" + "\t" +
+                     "In Map");
+  
+  for (GameMap gameMap : map) {
+   System.out.println(gameMap.getDescription()+ "\t   " +
+                      gameMap.getRequiredLocations() + "\t    " +
+                      gameMap.getLocations());
+  }
+  
  }
 
- private void showCurrentInventory() {
-  System.out.println("*** showCurrentInventory function is called ***");
+ private void viewInventory() {
+  
+  InventoryItem[] inventory = GameControl.getSortedInventoryList();
+  
+  System.out.println("\nList of Inventory Items");
+  System.out.println("Description" + "\t" +
+                     "Required" + "\t" +
+                     "In Stock");
+  
+  for (InventoryItem inventoryItem : inventory) {
+   System.out.println(inventoryItem.getDescription()+ "\t   " +
+                      inventoryItem.getRequiredAmount() + "\t    " +
+                      inventoryItem.getQuantityInStock());
+  }
+  
+ }
+
+ private static class InventoryItem {
+
+  public InventoryItem() {
+  }
  }
 
 }

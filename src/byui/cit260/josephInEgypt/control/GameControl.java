@@ -13,6 +13,7 @@ import byui.cit260.josephInEgypt.model.Location;
 import byui.cit260.josephInEgypt.model.Map;
 import byui.cit260.josephInEgypt.model.Player;
 import byui.cit260.josephInEgypt.model.Warehouse;
+import byui.cit260.josephInEgypt.view.GameMenuView;
 import josephinegypt.JosephInEgypt;
 
 /**
@@ -20,6 +21,7 @@ import josephinegypt.JosephInEgypt;
  * @author Marvin y Amada
  */
 public class GameControl {
+ private static Object JosepthInEgypt;
 
  public static void createNewGame(Player player) {
   Game game = new Game(); // create new game
@@ -148,6 +150,25 @@ public static InventoryItem[] createInventoryList(){
   locations[0][0].setScene(scenes[SceneType.cattle.ordinal()]);
   locations[0][1].setScene(scenes[SceneType.cattle.ordinal()]);
   locations[0][2].setScene(scenes[SceneType.finish.ordinal()]);
+ }
+
+ public static InventoryItem[] getSortedInventoryList() {
+  InventoryItem[] originalInventoryList =
+          JosepthInEgypt.getCurrentGame().getInventory();
+  
+  InventoryItem[] inventoryList = originalInventoryList.clone();
+  
+  InventoryItem tempInventoryItem;
+  for (int i = 0; i < inventoryList.length -1; i++) {
+   for (int j = 0; j < inventoryList.length-1-i; j++) {
+    if (inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j + 1].getDescription()) > 0) {
+       tempInventoryItem = inventoryList[j];
+       inventoryList[j] = inventoryList[j+1];
+       inventoryList[j+1] = tempInventoryItem;
+    }
+   }
+  }
+  return inventoryList;
  }
 
  private static class Constants {
