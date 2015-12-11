@@ -6,6 +6,7 @@
 package byui.cit260.josephInEgypt.model;
 
 
+import byui.cit260.josephInEgypt.control.Scene;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -22,6 +23,24 @@ public class  Game implements Serializable {
     private Warehouse warehouse;
     private Container container;
     private Map map;
+    private Location[][] locations;
+    private Scene[] scenes;
+
+ public void setLocations(Location[][] locations) {
+  this.locations = locations;
+ }
+
+ public void setScenes(Scene[] scenes) {
+  this.scenes = scenes;
+ }
+
+ public Location[][] getLocations() {
+  return locations;
+ }
+
+ public Scene[] getScenes() {
+  return scenes;
+ }
 
  public double getTimeStatus() {
   return timeStatus;
@@ -79,8 +98,8 @@ public class  Game implements Serializable {
   this.map = map;
  }    
 
- public void setInventory(byui.cit260.josephInEgypt.control.InventoryItem[] inventoryList) {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
- }
+// public void setInventory(byui.cit260.josephInEgypt.control.InventoryItem[] inventoryList) {
+//  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+// }
 
 }

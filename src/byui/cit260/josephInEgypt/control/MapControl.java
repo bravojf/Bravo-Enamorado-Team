@@ -24,7 +24,7 @@ public class MapControl {
   Map map = new Map(20, 20);
   
   // create a list of different scenes in the game
-  Scene[] scenes = crateScenes();
+  Scene[] scenes = createScenes();
   
   // assign the different scenes to location in the map
   GameControl.assignScenesToLocations(map, scenes);
@@ -43,10 +43,10 @@ public class MapControl {
   return 0;
  }
 
- private static Scene[] crateScenes() {
+ private static Scene[] createScenes() {
   Game game = JosephInEgypt.getCurrentGame();
   
-  Scene[] scenes = new Scene[SceneType.values().length];
+  Scene[] scenes = new Scene[3];
   
   Scene startingScene = new Scene();
   startingScene.setDescription(
@@ -93,58 +93,33 @@ public class MapControl {
    );
   finishScene.setMapSymbol(" FS ");
   finishScene.setBlocked(false);
-  finishScene.setTravelTime(Double.POSITIVE_INFINITY);
+  finishScene.setTravelTime(0);
   scenes[SceneType.finish.ordinal()] = finishScene;
   
   return scenes;
   
  }
 
- private static void assignScenesToLocations(Map map, Scene[] scenes) {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
- }
+// private static void assignScenesToLocations(Map map, Scene[] scenes) {
+//  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+// }
 
  private static int moveActorToLocation(Actor actor, Point coordinates) {
   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
  }
  
- private static class Scene {
 
-  public Scene() {
-  }
-
-  private void setDescription(String string) {
-   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  }
-
-  private void setMapSymbol(String _st_) {
-   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  }
-
-  private void setBlocked(boolean b) {
-   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  }
-
-  private void setTravelTime(int i) {
-   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  }
-
-  private void setTravelTime(double POSITIVE_INFINITY) {
-   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  }
- }
-
- private static class SceneType {
-  private static Object start;
-  private static Object finish;
-  private static Object cattle;
-
-  private static Object values() {
-   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  }
-
-  public SceneType() {
-  }
- }
+// private static class SceneType {
+//  private static Object start;
+//  private static Object finish;
+//  private static Object cattle;
+//
+//  private static Object values() {
+//   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//  }
+//
+//  public SceneType() {
+//  }
+// }
  
 }

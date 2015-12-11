@@ -6,7 +6,8 @@
 package byui.cit260.josephInEgypt.control;
 
 import byui.cit260.josephInEgypt.control.InventoryItem.Item;
-import byui.cit260.josephInEgypt.control.Scene.SceneType;
+import byui.cit260.josephInEgypt.control.Scene;
+import byui.cit260.josephInEgypt.control.SceneType;
 import byui.cit260.josephInEgypt.model.Container;
 import byui.cit260.josephInEgypt.model.Game;
 import byui.cit260.josephInEgypt.model.Location;
@@ -144,13 +145,16 @@ public static InventoryItem[] createInventoryList(){
     return inventory;
 }
 
- private static void assignScenesToLocations(Map map, Scene[] scenes) {
+ public static void assignScenesToLocations(Map map, Scene[] scenes) {
   Location[][] locations = map.getLocations();
-  
   locations[0][0].setScene(scenes[SceneType.cattle.ordinal()]);
   locations[0][1].setScene(scenes[SceneType.cattle.ordinal()]);
   locations[0][2].setScene(scenes[SceneType.finish.ordinal()]);
+  JosephInEgypt.getCurrentGame().setScenes(scenes);
+  JosephInEgypt.getCurrentGame().setMap(map);
+  JosephInEgypt.getCurrentGame().setLocations(locations);
  }
+ 
 
  public static InventoryItem[] getSortedInventoryList() {
   InventoryItem[] originalInventoryList =
