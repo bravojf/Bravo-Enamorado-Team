@@ -5,10 +5,20 @@
  */
 package josephinegypt;
 
+import java.io.InputStreamReader;
+
 /**
  *
  * @author jocsan
  */
 class BufferedReader {
+
+ BufferedReader(InputStreamReader inputStreamReader) {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ }
+
+ void close() {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ }
     
 }

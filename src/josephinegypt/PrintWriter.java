@@ -5,10 +5,20 @@
  */
 package josephinegypt;
 
+import java.io.PrintStream;
+
 /**
  *
  * @author jocsan
  */
 class PrintWriter {
+
+ PrintWriter(PrintStream out, boolean b) {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ }
+
+ void close() {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ }
     
 }

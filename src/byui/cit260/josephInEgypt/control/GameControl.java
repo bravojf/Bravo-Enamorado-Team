@@ -5,6 +5,7 @@
  */
 package byui.cit260.josephInEgypt.control;
 
+import MapControlException.MapControlException;
 import byui.cit260.josephInEgypt.control.InventoryItem.Item;
 import byui.cit260.josephInEgypt.control.Scene;
 import byui.cit260.josephInEgypt.control.SceneType;
@@ -24,7 +25,7 @@ import josephinegypt.JosephInEgypt;
 public class GameControl {
  private static Object JosepthInEgypt;
 
- public static void createNewGame(Player player) {
+ public static void createNewGame(Player player) throws MapControlException {
   Game game = new Game(); // create new game
   JosephInEgypt.setCurrentGame(game); // save in JosephInEgypt
   
@@ -156,25 +157,26 @@ public static InventoryItem[] createInventoryList(){
  }
  
 
- public static InventoryItem[] getSortedInventoryList() {
-  InventoryItem[] originalInventoryList =
-          JosepthInEgypt.getCurrentGame().getInventory();
+ public static byui.cit260.josephInEgypt.model.InventoryItem[] getSortedInventoryList() {
+  byui.cit260.josephInEgypt.model.InventoryItem[] originalInventoryList =
+          JosephInEgypt.getCurrentGame().getInventory();
   
-  InventoryItem[] inventoryList = originalInventoryList.clone();
+  byui.cit260.josephInEgypt.model.InventoryItem[] inventoryList = originalInventoryList.clone();
   
   InventoryItem tempInventoryItem;
   for (int i = 0; i < inventoryList.length -1; i++) {
    for (int j = 0; j < inventoryList.length-1-i; j++) {
-    if (inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j + 1].getDescription()) > 0) {
-       tempInventoryItem = inventoryList[j];
-       inventoryList[j] = inventoryList[j+1];
-       inventoryList[j+1] = tempInventoryItem;
-    }
+//    if (inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j + 1].getDescription()) > 0) {
+//       tempInventoryItem = inventoryList[j];
+//       inventoryList[j] = inventoryList[j+1];
+//       inventoryList[j+1] = tempInventoryItem;
+//    }
    }
   }
   return inventoryList;
  }
 
+ 
  private static class Constants {
   private static int NUMBER_OF_INVENTORY_ITEMS;
 

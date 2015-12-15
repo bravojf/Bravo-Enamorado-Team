@@ -5,12 +5,15 @@
  */
 package byui.cit260.josephInEgypt.view;
 
+import java.io.PrintWriter;
+import josephinegypt.JosephInEgypt;
+
 /**
  *
  * @author jocsan
  */
-public class ErrorView {
-    private static final PrintWriter errorFile = JosephInEgypt.getOutFile();
-    public static void display(String className)
-    
-}
+//public class ErrorView {
+//    private static final PrintWriter errorFile = JosephInEgypt.getOutFile();
+//    public static void display(String className);
+//    
+//}

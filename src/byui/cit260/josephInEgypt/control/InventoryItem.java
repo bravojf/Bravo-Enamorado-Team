@@ -9,7 +9,7 @@ package byui.cit260.josephInEgypt.control;
  *
  * @author Marvin y Amada
  */
-class InventoryItem {
+public class InventoryItem {
 
  void setDescription(String meat) {
   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

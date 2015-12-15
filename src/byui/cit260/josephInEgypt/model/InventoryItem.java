@@ -9,7 +9,19 @@ package byui.cit260.josephInEgypt.model;
  *
  * @author Marvin y Amada
  */
-class InventoryItem {
+public class InventoryItem {
+
+ public String getDescription() {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ }
+
+ public String getRequiredAmount() {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ }
+
+ public String getQuantityInStock() {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ }
  public enum Item{
         meat,
         ore,

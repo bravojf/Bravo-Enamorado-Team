@@ -19,7 +19,7 @@ import josephinegypt.JosephInEgypt;
 public class MapControl {
  private static Object staringScene;
  
- private static Map createMap() {
+ static Map createMap() {
   // create the map
   Map map = new Map(20, 20);
   

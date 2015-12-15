@@ -102,4 +102,8 @@ public class  Game implements Serializable {
 //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 // }
 
+ public void setInventory(byui.cit260.josephInEgypt.control.InventoryItem[] inventoryList) {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ }
+
 }

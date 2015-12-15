@@ -120,7 +120,7 @@ public class GameMenuView extends View {
   System.out.println("*** deliverGoods function is called ***");
  }
 
- private void viewGameMap() {
+ public void viewGameMap() {
   
   GameMap[] map = GameControl.getSortedGameMap();
   
@@ -139,14 +139,14 @@ public class GameMenuView extends View {
 
  private void viewInventory() {
   
-  InventoryItem[] inventory = GameControl.getSortedInventoryList();
+  byui.cit260.josephInEgypt.model.InventoryItem[] inventory = GameControl.getSortedInventoryList();
   
   System.out.println("\nList of Inventory Items");
   System.out.println("Description" + "\t" +
                      "Required" + "\t" +
                      "In Stock");
   
-  for (InventoryItem inventoryItem : inventory) {
+  for (byui.cit260.josephInEgypt.model.InventoryItem inventoryItem : inventory) {
    System.out.println(inventoryItem.getDescription()+ "\t   " +
                       inventoryItem.getRequiredAmount() + "\t    " +
                       inventoryItem.getQuantityInStock());
@@ -157,6 +157,24 @@ public class GameMenuView extends View {
  private static class InventoryItem {
 
   public InventoryItem() {
+  }
+ }
+
+ private static class GameMap {
+
+  public GameMap() {
+  }
+
+  private String getDescription() {
+   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }
+
+  private String getRequiredLocations() {
+   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }
+
+  private String getLocations() {
+   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
   }
  }
 
