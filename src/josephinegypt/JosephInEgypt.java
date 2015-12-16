@@ -49,8 +49,13 @@ public class JosephInEgypt {
        JosephInEgypt.outFile.close();
       startProgramView.startProgram();
      
-    }
+     }
+     }
 
+ /**
+  *
+  * @param player
+  */
  public static void setPlayer(Player player) {
   JosephInEgypt.player = player;
  }

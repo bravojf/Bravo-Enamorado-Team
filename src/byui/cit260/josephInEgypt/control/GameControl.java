@@ -163,17 +163,21 @@ public static InventoryItem[] createInventoryList(){
   
   byui.cit260.josephInEgypt.model.InventoryItem[] inventoryList = originalInventoryList.clone();
   
-  InventoryItem tempInventoryItem;
+  byui.cit260.josephInEgypt.model.InventoryItem tempInventoryItem;
   for (int i = 0; i < inventoryList.length -1; i++) {
    for (int j = 0; j < inventoryList.length-1-i; j++) {
-//    if (inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j + 1].getDescription()) > 0) {
-//       tempInventoryItem = inventoryList[j];
-//       inventoryList[j] = inventoryList[j+1];
-//       inventoryList[j+1] = tempInventoryItem;
-//    }
+    if (inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j + 1].getDescription()) > 0) {
+       tempInventoryItem = inventoryList[j];
+       inventoryList[j] = inventoryList[j+1];
+       inventoryList[j+1] = tempInventoryItem;
+    }
    }
   }
   return inventoryList;
+ }
+
+ public static GameMenuView.GameMap[] getSortedGameMap() {
+  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
  }
 
  

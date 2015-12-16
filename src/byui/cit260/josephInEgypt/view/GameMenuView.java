@@ -160,7 +160,7 @@ public class GameMenuView extends View {
   }
  }
 
- private static class GameMap {
+ public static class GameMap {
 
   public GameMap() {
   }
