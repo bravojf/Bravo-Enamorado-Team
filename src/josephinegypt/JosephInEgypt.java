@@ -48,9 +48,8 @@ public class JosephInEgypt {
       if (JosephInEgypt.outFile !=null)
        JosephInEgypt.outFile.close();
       startProgramView.startProgram();
-     
      }
-     }
+    }
 
  /**
   *
