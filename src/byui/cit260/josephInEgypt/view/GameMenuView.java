@@ -7,6 +7,8 @@ package byui.cit260.josephInEgypt.view;
 
 import byui.cit260.josephInEgypt.control.GameControl;
 import byui.cit260.josephInEgypt.control.TransportControl;
+import byui.cit260.josephInEgypt.control.InventoryItem;
+import byui.cit260.josephInEgypt.model.Location;
 import java.util.Scanner;
 import josephinegypt.JosephInEgypt;
 
@@ -121,32 +123,35 @@ public class GameMenuView extends View {
  }
 
  public void viewGameMap() {
-  
-  GameMap[] map = GameControl.getSortedGameMap();
+  Location[][] locations = josephinegypt.JosephInEgypt.getCurrentGame().getMap().getLocations();
   
   System.out.println("\nList of Locations in the Map");
-  System.out.println("Description" + "\t" +
-                     "Locations" + "\t" +
-                     "In Map");
+  System.out.println("------------------------------");
+  System.out.println("|  0 |  1 |  2 |  3 |  4 |");
   
-  for (GameMap gameMap : map) {
-   System.out.println(gameMap.getDescription()+ "\t   " +
-                      gameMap.getRequiredLocations() + "\t    " +
-                      gameMap.getLocations());
+  for (int row = 0; row < locations.length; row++){
+   System.out.println("------------------------------");
+   for (int col = 0; col < locations[row].length; col++){
+    if (locations[row][col].getScene()!= null)
+     System.out.print("| " + locations[row][col].getScene().getMapSymbol() + " ");
+    else
+    System.out.print("|    ");
+   }
+   System.out.println("|");
   }
   
  }
 
  private void viewInventory() {
   
-  byui.cit260.josephInEgypt.model.InventoryItem[] inventory = GameControl.getSortedInventoryList();
+  byui.cit260.josephInEgypt.control.InventoryItem[] inventory = GameControl.getSortedInventoryList();
   
   System.out.println("\nList of Inventory Items");
   System.out.println("Description" + "\t" +
                      "Required" + "\t" +
                      "In Stock");
   
-  for (byui.cit260.josephInEgypt.model.InventoryItem inventoryItem : inventory) {
+  for (byui.cit260.josephInEgypt.control.InventoryItem inventoryItem : inventory) {
    System.out.println(inventoryItem.getDescription()+ "\t   " +
                       inventoryItem.getRequiredAmount() + "\t    " +
                       inventoryItem.getQuantityInStock());
@@ -160,22 +165,23 @@ public class GameMenuView extends View {
   }
  }
 
- public static class GameMap {
-
-  public GameMap() {
-  }
-
-  private String getDescription() {
-   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  }
-
-  private String getRequiredLocations() {
-   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  }
-
-  private String getLocations() {
-   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  }
- }
+// public static class GameMap {
+//  String description;
+//
+//  public GameMap() {
+//  }
+//
+////  public String getDescription() {
+////   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+////  }
+////
+////  private String getRequiredLocations() {
+////   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+////  }
+////
+////  private String getLocations() {
+////   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+////  }
+// }
 
 }

@@ -7,6 +7,7 @@ package byui.cit260.josephInEgypt.model;
 
 
 import byui.cit260.josephInEgypt.control.Scene;
+import byui.cit260.josephInEgypt.control.InventoryItem;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -101,9 +102,5 @@ public class  Game implements Serializable {
 // public void setInventory(byui.cit260.josephInEgypt.control.InventoryItem[] inventoryList) {
 //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 // }
-
- public void setInventory(byui.cit260.josephInEgypt.control.InventoryItem[] inventoryList) {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
- }
 
 }

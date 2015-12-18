@@ -45,6 +45,32 @@ public class Location implements Serializable{
    this.scene = scene;
   }
 
+ public ArrayList<Actor> getActors() {
+  return actors;
+ }
+
+ public void setActors(ArrayList<Actor> actors) {
+  this.actors = actors;
+ }
+
+ public int getRow() {
+  return row;
+ }
+
+ public int getColumn() {
+  return column;
+ }
+
+ public void setRow(int row) {
+  this.row = row;
+ }
+
+ public void setColumn(int column) {
+  this.column = column;
+ }
+  
+  
+
  @Override
  public int hashCode() {
   int hash = 7;
@@ -87,18 +113,6 @@ public class Location implements Serializable{
  public String toString() {
   return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", scene=" + scene + ", actors=" + actors + '}';
  }
-
-  
-  
- void setColumn(int column) {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
- }
-
-
- void setRow(int row) {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
- }
-    
     
     
 }

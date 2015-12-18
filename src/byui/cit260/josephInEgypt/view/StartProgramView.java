@@ -83,12 +83,12 @@ public class StartProgramView {
 
     private void displayWelcomeMessage(Player player) {
        System.out.println("\n\n=================================================");
-       System.out.println("\tWelcome to the game " + player.getName());
+       System.out.println("\tWelcome to the game " + player.getPlayerName());
        System.out.println("\tWe hope you have a lot of fun!");
        System.out.println("=====================================================");
     }
 
- public void display() {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
- }
+// public void display() {
+//  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+// }
 }

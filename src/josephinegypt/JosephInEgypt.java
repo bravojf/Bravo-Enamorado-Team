@@ -4,8 +4,11 @@ import byui.cit260.josephInEgypt.model.Game;
 import byui.cit260.josephInEgypt.model.Player;
 import byui.cit260.josephInEgypt.model.Transport;
 import byui.cit260.josephInEgypt.view.StartProgramView;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 //import byui.cit260.josephInEgypt.model.PrintWriter;
 
@@ -33,21 +36,25 @@ public class JosephInEgypt {
 
      StartProgramView startProgramView = new StartProgramView();
      try {
-      startProgramView.display();
+      startProgramView.startProgram();
       return;
       
      } catch(Throwable te) {
         System.out.println(te.getMessage());
          te.printStackTrace();
-         startProgramView.display();
+//         startProgramView.startProgram();
      }
      
      finally{
       if (JosephInEgypt.inFile !=null)
-       JosephInEgypt.inFile.close();
+       try {
+        JosephInEgypt.inFile.close();
+      } catch (IOException ex) {
+       Logger.getLogger(JosephInEgypt.class.getName()).log(Level.SEVERE, null, ex);
+      }
       if (JosephInEgypt.outFile !=null)
        JosephInEgypt.outFile.close();
-      startProgramView.startProgram();
+//      startProgramView.startProgram();
      }
     }
 

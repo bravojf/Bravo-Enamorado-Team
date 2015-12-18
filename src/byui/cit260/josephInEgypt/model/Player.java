@@ -57,15 +57,6 @@ public class Player implements Serializable{
    return false;
   }
   return true;
- } 
-
- public String getName() {
-  System.out.println("\n*** getName function called ***");
-  return null;
- }
-
- public void setName(String name) {
-  System.out.println("\n*** setName function called ***");
  }
  
 }

@@ -5,9 +5,10 @@
  */
 package byui.cit260.josephInEgypt.control;
 
-import MapControlException.MapControlException;
+import ControlException.MapControlException;
 import byui.cit260.josephInEgypt.model.Actor;
 import byui.cit260.josephInEgypt.model.Game;
+import byui.cit260.josephInEgypt.model.Location;
 import byui.cit260.josephInEgypt.model.Map;
 import java.awt.Point;
 import josephinegypt.JosephInEgypt;
@@ -17,11 +18,11 @@ import josephinegypt.JosephInEgypt;
  * @author Marvin y Amada
  */
 public class MapControl {
- private static Object staringScene;
+ private static Object startingScene;
  
  static Map createMap() {
   // create the map
-  Map map = new Map(20, 20);
+  Map map = new Map(5, 5);
   
   // create a list of different scenes in the game
   Scene[] scenes = createScenes();
@@ -46,7 +47,7 @@ public class MapControl {
  private static Scene[] createScenes() {
   Game game = JosephInEgypt.getCurrentGame();
   
-  Scene[] scenes = new Scene[3];
+  Scene[] scenes = new Scene[5];
   
   Scene startingScene = new Scene();
   startingScene.setDescription(
@@ -59,7 +60,7 @@ public class MapControl {
          +"\nAs the major officer in Egypt, Joseph will administer all the preparations for the 7"
          +"harsh years of drought."
    );
-  startingScene.setMapSymbol(" ST ");
+  startingScene.setMapSymbol("ST");
   startingScene.setBlocked(false);
   startingScene.setTravelTime(240);
   scenes[SceneType.start.ordinal()] = startingScene;
@@ -75,10 +76,42 @@ public class MapControl {
          +"\nAs the major officer in Egypt, Joseph will administer all the preparations for the 7"
          +"harsh years of drought."
    );
-  cattleScene.setMapSymbol(" CT ");
+  cattleScene.setMapSymbol("CT");
   cattleScene.setBlocked(false);
   cattleScene.setTravelTime(240);
   scenes[SceneType.cattle.ordinal()] = cattleScene;
+  
+  Scene grainScene = new Scene();
+  grainScene.setDescription(
+          "\nNow therefore let Pharaoh look out a man discreet and wise, and set him over the land of"
+         +"Egypt. Let Pharaoh do this, and let him appoint officers over the land, and take up the" 
+         +"fifth part of the land of Egypt in the seven plenteous years. And let them gather all"
+         +"the food of those good years that come, and lay up corn under the hand of Pharaoh, and let"
+         +"them keep food in the cities."
+         +"\nJoseph has been given power over the land and now he must become the savior of Egypt."
+         +"\nAs the major officer in Egypt, Joseph will administer all the preparations for the 7"
+         +"harsh years of drought."
+   );
+  grainScene.setMapSymbol("GR");
+  grainScene.setBlocked(false);
+  grainScene.setTravelTime(350);
+  scenes[SceneType.grain.ordinal()] = grainScene;
+  
+  Scene mountainScene = new Scene();
+  mountainScene.setDescription(
+          "\nNow therefore let Pharaoh look out a man discreet and wise, and set him over the land of"
+         +"Egypt. Let Pharaoh do this, and let him appoint officers over the land, and take up the" 
+         +"fifth part of the land of Egypt in the seven plenteous years. And let them gather all"
+         +"the food of those good years that come, and lay up corn under the hand of Pharaoh, and let"
+         +"them keep food in the cities."
+         +"\nJoseph has been given power over the land and now he must become the savior of Egypt."
+         +"\nAs the major officer in Egypt, Joseph will administer all the preparations for the 7"
+         +"harsh years of drought."
+   );
+  mountainScene.setMapSymbol("MT");
+  mountainScene.setBlocked(false);
+  mountainScene.setTravelTime(140);
+  scenes[SceneType.mountain.ordinal()] = mountainScene;
   
   Scene finishScene = new Scene();
   finishScene.setDescription(
@@ -91,7 +124,7 @@ public class MapControl {
          +"\nAs the major officer in Egypt, Joseph will administer all the preparations for the 7"
          +"harsh years of drought."
    );
-  finishScene.setMapSymbol(" FS ");
+  finishScene.setMapSymbol("FS");
   finishScene.setBlocked(false);
   finishScene.setTravelTime(0);
   scenes[SceneType.finish.ordinal()] = finishScene;
@@ -100,26 +133,29 @@ public class MapControl {
   
  }
 
-// private static void assignScenesToLocations(Map map, Scene[] scenes) {
-//  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-// }
+ private static void assignScenesToLocations(Map map, Scene[] scenes) throws MapControlException {
+  Location[][] locations = map.getLocations();
+  
+  locations[2][3].setScene(scenes[SceneType.cattle.ordinal()]);
+  locations[3][4].setScene(scenes[SceneType.grain.ordinal()]);
+  locations[1][2].setScene(scenes[SceneType.mountain.ordinal()]);
+  
+ }
 
- private static int moveActorToLocation(Actor actor, Point coordinates) {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ private static int moveActorToLocation(Actor actor, Point coordinates) throws MapControlException {
+  Map map = JosephInEgypt.getCurrentGame().getMap();
+  int newRow = coordinates.x-1;
+  int newColumn = coordinates.y-1;
+  
+  if(newRow < 0 || newRow >= map.getNoOfRows() ||
+          newColumn < 0 ||  newColumn >= map.getNoOfColumns()) {
+   throw new MapControlException("Can not move actor to location "
+                                 + coordinates.x + ", " + coordinates.y
+                                 + " because that location is outside "
+                                 + " the bounds of the map.");
+  }
+  return 0;
  }
  
-
-// private static class SceneType {
-//  private static Object start;
-//  private static Object finish;
-//  private static Object cattle;
-//
-//  private static Object values() {
-//   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//  }
-//
-//  public SceneType() {
-//  }
-// }
  
 }

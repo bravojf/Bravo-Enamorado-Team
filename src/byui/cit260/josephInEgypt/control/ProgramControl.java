@@ -20,7 +20,7 @@ public class ProgramControl {
        }
        
        Player player = new Player();
-       player.setName(name);
+       player.setPlayerName(name);
        
        JosephInEgypt.setPlayer(player);
        return player;

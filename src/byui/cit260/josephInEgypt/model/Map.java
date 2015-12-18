@@ -54,4 +54,12 @@ public class Map implements Serializable{
   return locations;
  }
 
+ public int getNoOfColumns() {
+  return noOfColumns;
+ }
+
+ public int getNoOfRows() {
+  return noOfRows;
+ }
+
 }

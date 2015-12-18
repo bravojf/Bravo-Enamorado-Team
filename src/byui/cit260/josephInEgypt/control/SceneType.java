@@ -13,6 +13,8 @@ package byui.cit260.josephInEgypt.control;
 public enum SceneType{
    start,
    cattle,
+   grain,
+   mountain,
    finish;
   }
 

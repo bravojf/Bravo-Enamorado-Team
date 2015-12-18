@@ -5,7 +5,7 @@
  */
 package byui.cit260.josephInEgypt.view;
 
-import MapControlException.MapControlException;
+import ControlException.MapControlException;
 import byui.cit260.josephInEgypt.control.GameControl;
 import java.util.Scanner;
 import java.util.logging.Level;

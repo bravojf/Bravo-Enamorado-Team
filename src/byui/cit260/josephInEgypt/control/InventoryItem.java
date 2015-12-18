@@ -11,21 +11,35 @@ package byui.cit260.josephInEgypt.control;
  */
 public class InventoryItem {
 
- void setDescription(String meat) {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ String description;
+ int quantityInStock;
+ int requiredAmount;
+
+ public String getDescription() {
+  return description;
  }
 
- void setQuantityInStock(int i) {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ public void setDescription(String description) {
+  this.description = description;
  }
 
- void setRequiredAmount(int i) {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ public int getQuantityInStock() {
+  return quantityInStock;
  }
 
- Object getDescription() {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ public void setQuantityInStock(int quantityInStock) {
+  this.quantityInStock = quantityInStock;
  }
+
+ public int getRequiredAmount() {
+  return requiredAmount;
+ }
+
+ public void setRequiredAmount(int requiredAmount) {
+  this.requiredAmount = requiredAmount;
+ }
+ 
+
   public enum Item{
         meat,
         ore,
@@ -41,6 +55,7 @@ public class InventoryItem {
         chisel,  
         saw,
         carts, 
-        barrels;
+        barrels,
+        last;
     }
 }

@@ -5,8 +5,9 @@
  */
 package byui.cit260.josephInEgypt.control;
 
-import MapControlException.MapControlException;
+import ControlException.MapControlException;
 import byui.cit260.josephInEgypt.control.InventoryItem.Item;
+import byui.cit260.josephInEgypt.control.InventoryItem;
 import byui.cit260.josephInEgypt.control.Scene;
 import byui.cit260.josephInEgypt.control.SceneType;
 import byui.cit260.josephInEgypt.model.Container;
@@ -16,6 +17,7 @@ import byui.cit260.josephInEgypt.model.Map;
 import byui.cit260.josephInEgypt.model.Player;
 import byui.cit260.josephInEgypt.model.Warehouse;
 import byui.cit260.josephInEgypt.view.GameMenuView;
+//import byui.cit260.josephInEgypt.view.GameMenuView.GameMap;
 import josephinegypt.JosephInEgypt;
 
 /**
@@ -45,12 +47,17 @@ public class GameControl {
   game.setMap(map); // save map in game
   
   // move actors to starting position in the map
+  try {
   MapControl.moveActorsToStartingLocation(map);
+  }
+  catch(MapControlException ex){
+   System.out.println("Error - " + ex);
+   }
  }
 
 public static InventoryItem[] createInventoryList(){
         InventoryItem[] inventory =
-            new InventoryItem[Constants.NUMBER_OF_INVENTORY_ITEMS];
+            new InventoryItem[Item.last.ordinal()];
 
         InventoryItem meat = new InventoryItem();
         meat.setDescription("Meat");
@@ -148,22 +155,22 @@ public static InventoryItem[] createInventoryList(){
 
  public static void assignScenesToLocations(Map map, Scene[] scenes) {
   Location[][] locations = map.getLocations();
-  locations[0][0].setScene(scenes[SceneType.cattle.ordinal()]);
-  locations[0][1].setScene(scenes[SceneType.cattle.ordinal()]);
-  locations[0][2].setScene(scenes[SceneType.finish.ordinal()]);
+  locations[2][3].setScene(scenes[SceneType.cattle.ordinal()]);
+  locations[3][4].setScene(scenes[SceneType.grain.ordinal()]);
+  locations[1][2].setScene(scenes[SceneType.mountain.ordinal()]);
   JosephInEgypt.getCurrentGame().setScenes(scenes);
   JosephInEgypt.getCurrentGame().setMap(map);
   JosephInEgypt.getCurrentGame().setLocations(locations);
  }
  
 
- public static byui.cit260.josephInEgypt.model.InventoryItem[] getSortedInventoryList() {
-  byui.cit260.josephInEgypt.model.InventoryItem[] originalInventoryList =
+ public static byui.cit260.josephInEgypt.control.InventoryItem[] getSortedInventoryList() {
+  byui.cit260.josephInEgypt.control.InventoryItem[] originalInventoryList =
           JosephInEgypt.getCurrentGame().getInventory();
   
-  byui.cit260.josephInEgypt.model.InventoryItem[] inventoryList = originalInventoryList.clone();
+  byui.cit260.josephInEgypt.control.InventoryItem[] inventoryList = originalInventoryList.clone();
   
-  byui.cit260.josephInEgypt.model.InventoryItem tempInventoryItem;
+  byui.cit260.josephInEgypt.control.InventoryItem tempInventoryItem;
   for (int i = 0; i < inventoryList.length -1; i++) {
    for (int j = 0; j < inventoryList.length-1-i; j++) {
     if (inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j + 1].getDescription()) > 0) {
@@ -176,9 +183,24 @@ public static InventoryItem[] createInventoryList(){
   return inventoryList;
  }
 
- public static GameMenuView.GameMap[] getSortedGameMap() {
-  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
- }
+// public static GameMenuView.GameMap[] getSortedGameMap() {
+//  Map originalGameMap =
+//          JosephInEgypt.getCurrentGame().getMap();
+//  GameMap[] gameMap = (GameMap[]) originalGameMap.;
+//  GameMap tempGameMap;
+//  for (int i = 0; i < gameMap.length-1; i++) {
+//   for (int j = 0; j < gameMap.length-1-i; j++) {
+//    if (gameMap[j].getDescription().compareToIgnoreCase(gameMap[j + 1].getDescription()) > 0){
+//     tempGameMap = gameMap[j];
+//    gameMap[j] = gameMap[j+1];
+//    gameMap[j+1] = tempGameMap;
+//   }
+//   }
+//  }
+//   return gameMap;
+// }
+
+
 
  
  private static class Constants {
